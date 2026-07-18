@@ -810,175 +810,226 @@
 
         .sim-stage-role {
             font-size: 9px;
-            color: var(--ink-light);
+            color: var(--ink-soft);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-top: 2px;
         }
 
         .sim-console {
-            background: #ffffff;
+            background: var(--surface);
             border: 1px solid var(--line);
-            border-radius: 12px;
-            box-shadow: 0 12px 36px -12px rgba(33, 30, 25, 0.12);
+            border-radius: var(--radius-lg);
             overflow: hidden;
             display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 420px;
+            grid-template-columns: 260px 1fr;
+            min-height: 380px;
         }
 
         .sim-sidebar {
-            background: var(--greige);
-            padding: 24px;
+            padding: 28px 24px;
             border-right: 1px solid var(--line);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .sim-order-card {
-            background: #ffffff;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sim-order-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--indigo);
-        }
-
-        .sim-order-badge {
-            font-family: var(--font-mono);
-            font-size: 9px;
-            background: #e9ecf0;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: var(--indigo);
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .sim-order-details {
-            font-size: 11.5px;
-            line-height: 1.5;
-            color: var(--ink-soft);
-        }
-
-        .sim-order-status {
-            margin-top: 14px;
-            padding-top: 12px;
-            border-top: 1px dashed var(--line);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .sim-main {
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #fff;
-        }
-
-        .sim-content-body {
+            background: rgba(237, 232, 221, 0.45);
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .sim-q-box {
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            padding-bottom: 16px;
+        .sim-sidebar-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            font-weight: 600;
         }
 
-        .sim-q-box:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+        .sim-order-badge {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            color: var(--indigo);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .sim-order-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .sim-order-details {
+            font-size: 13px;
+            line-height: 1.65;
+            color: var(--ink-soft);
+        }
+
+        .sim-order-details strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .sim-order-status {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--indigo);
+        }
+
+        .sim-order-status.done {
+            color: #1e9a5a;
+        }
+
+        .sim-main {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+        }
+
+        .sim-content-body {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            flex: 1;
+        }
+
+        .sim-q-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .sim-q-title {
             font-family: var(--font-mono);
             font-size: 10px;
-            color: var(--ink-light);
+            color: var(--ink-soft);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-        }
-
-        .sim-q-content {
-            font-size: 13.5px;
-            line-height: 1.5;
-            color: var(--ink);
-            font-weight: 500;
-        }
-
-        .sim-alert {
-            background: #fff9db;
-            border: 1px solid #ffe8cc;
-            color: #b05c00;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-size: 12px;
-            margin-top: 6px;
+            letter-spacing: 0.08em;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: 600;
+        }
+
+        .sim-q-title i {
+            color: var(--indigo);
+            width: 14px;
+            text-align: center;
+        }
+
+        .sim-q-title .warn {
+            color: var(--amber);
+        }
+
+        .sim-q-content {
+            font-size: 14px;
+            line-height: 1.55;
+            color: var(--ink);
+        }
+
+        .sim-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.45;
             font-weight: 500;
+            background: rgba(184, 117, 42, 0.08);
+            color: #8a5a1f;
+            border: 1px solid rgba(184, 117, 42, 0.18);
+        }
+
+        .sim-alert i {
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
         .sim-alert-danger {
-            background: #fff5f5;
-            border: 1px solid #ffe3e3;
-            color: #c92a2a;
+            background: rgba(201, 42, 42, 0.06);
+            border-color: rgba(201, 42, 42, 0.16);
+            color: #a61e1e;
         }
 
         .sim-alert-success {
-            background: #ebfbee;
-            border: 1px solid #d3f9d8;
-            color: #2b8a3e;
+            background: rgba(30, 154, 90, 0.07);
+            border-color: rgba(30, 154, 90, 0.18);
+            color: #1a7a48;
         }
 
         .sim-widget {
-            border: 1px solid var(--line);
+            margin-top: 4px;
+            padding: 14px 16px;
             border-radius: 8px;
-            background: var(--surface);
-            padding: 14px;
-            margin-top: 8px;
+            background: rgba(237, 232, 221, 0.55);
+            border: 1px solid var(--line);
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: var(--ink-soft);
         }
+
+        .sim-widget strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .sim-widget-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .sim-widget-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(33, 30, 25, 0.06);
+        }
+
+        .sim-widget-row:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .sim-widget-row .ok { color: #1e9a5a; font-weight: 600; }
+        .sim-widget-row .bad { color: #c92a2a; font-weight: 600; }
 
         .sim-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 20px;
+            gap: 12px;
+            padding-top: 22px;
+            margin-top: 24px;
             border-top: 1px solid var(--line);
-            margin-top: 20px;
+        }
+
+        .sim-controls .btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
         @media (max-width:900px) {
             .sim-pipeline {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                padding: 10px 4px 16px !important;
-                gap: 16px !important;
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 10px 4px 16px;
+                gap: 16px;
                 scroll-snap-type: x mandatory;
                 -webkit-overflow-scrolling: touch;
                 justify-content: flex-start;
@@ -994,39 +1045,37 @@
             }
 
             .sim-stage {
-                flex: 0 0 110px !important;
+                flex: 0 0 110px;
                 scroll-snap-align: center;
             }
 
             .sim-pipeline::before,
             .sim-pipeline-progress {
-                display: none !important;
+                display: none;
             }
 
             .sim-console {
-                grid-template-columns: 1fr !important;
-                min-height: auto !important;
+                grid-template-columns: 1fr;
             }
 
             .sim-sidebar {
-                border-right: none !important;
-                border-bottom: 1px solid var(--line) !important;
-                padding: 16px !important;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 20px;
             }
 
             .sim-main {
-                padding: 16px !important;
+                padding: 20px;
             }
 
             .sim-controls {
-                flex-direction: column !important;
-                gap: 12px !important;
-                align-items: stretch !important;
+                flex-direction: column;
+                align-items: stretch;
             }
 
-            .sim-controls button {
-                width: 100% !important;
-                justify-content: center !important;
+            .sim-controls .btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -2068,86 +2117,66 @@
                 </div>
             </div>
 
-            <!-- Sleek Operating System Console Frame -->
             <div class="sim-console reveal">
-                <!-- Left: Active Order state card -->
-                <div class="sim-sidebar">
+                <aside class="sim-sidebar">
                     <div>
-                        <div style="font-size: 11px; font-weight: 700; color: var(--ink-light); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Active Journey Card</div>
-                        <div class="sim-order-card">
-                            <span class="sim-order-badge" id="simCardBadge">ORDER #1043</span>
-                            <div style="font-weight: 700; font-size: 14px; margin-bottom: 6px;" id="simCardTitle">Polo Classic T-Shirt</div>
-                            <div class="sim-order-details">
-                                <strong>Buyer:</strong> <span id="simCardBuyer">Apex Wear Ltd</span><br>
-                                <strong>Quantity:</strong> <span id="simCardQty">500 pcs</span><br>
-                                <strong>Sizes:</strong> S, M, L, XL<br>
-                                <strong>Ship Date:</strong> Aug 20, 2026
-                            </div>
-                            <div class="sim-order-status" id="simCardStatus">
-                                <i class="fa-solid fa-circle-play" style="color:var(--indigo);"></i>
-                                <span>Awaiting Sourcing Plan</span>
-                            </div>
+                        <div class="sim-sidebar-label">Active order</div>
+                        <span class="sim-order-badge" id="simCardBadge">CRM LEADS</span>
+                        <div class="sim-order-title" id="simCardTitle">Polo Classic T-Shirt</div>
+                        <div class="sim-order-details">
+                            <div><strong>Buyer:</strong> <span id="simCardBuyer">Apex Wear Ltd</span></div>
+                            <div><strong>Quantity:</strong> <span id="simCardQty">10,000 pcs</span></div>
+                            <div><strong>Sizes:</strong> S, M, L, XL</div>
+                            <div><strong>Ship date:</strong> Aug 25, 2026</div>
                         </div>
                     </div>
-                    
-                    <div style="font-size: 11px; color: var(--ink-soft); line-height: 1.45; font-family: var(--font-mono); margin-top: 20px;">
-                        <i class="fa-solid fa-desktop" style="margin-right: 4px;"></i> TexFlow OS v2.4<br>
-                        Status: <span style="color:#1e9a5a; font-weight: 600;">ACTIVE_SIM</span>
+                    <div class="sim-order-status" id="simCardStatus">
+                        <i class="fa-solid fa-circle-play"></i>
+                        <span>Awaiting BOM Setup</span>
                     </div>
-                </div>
+                </aside>
 
-                <!-- Right: Active simulation details answering the three questions -->
                 <div class="sim-main">
                     <div class="sim-content-body">
-                        <!-- Q1: What is happening? -->
                         <div class="sim-q-box">
                             <div class="sim-q-title">
-                                <i class="fa-solid fa-circle-question" style="color:var(--indigo);"></i>
+                                <i class="fa-solid fa-circle-info"></i>
                                 <span>What is happening?</span>
                             </div>
                             <div class="sim-q-content" id="simQHappening">
-                                Sales representative has confirmed the style order with Apex Wear. System automatically logs size ratios and targets.
+                                Sales logs the buyer inquiry, target pricing (₹240/pc), style specs, and client shipment deadline.
                             </div>
                         </div>
 
-                        <!-- Q2: What requires attention? -->
                         <div class="sim-q-box">
                             <div class="sim-q-title">
-                                <i class="fa-solid fa-triangle-exclamation" style="color:var(--amber);"></i>
+                                <i class="fa-solid fa-triangle-exclamation warn"></i>
                                 <span>What requires attention?</span>
                             </div>
                             <div class="sim-q-content" id="simQAttention">
                                 <div class="sim-alert">
                                     <i class="fa-solid fa-info-circle"></i>
-                                    <span>Initial check: Order timeline has no active BOM or approved pricing sheet.</span>
+                                    <span>Order timeline has no active BOM or approved pricing sheet yet.</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Q3: What decision to take next? -->
                         <div class="sim-q-box">
                             <div class="sim-q-title">
-                                <i class="fa-solid fa-circle-play" style="color:var(--indigo);"></i>
-                                <span>What decision should be taken next?</span>
+                                <i class="fa-solid fa-circle-play"></i>
+                                <span>What decision next?</span>
                             </div>
                             <div class="sim-q-content" id="simQDecision">
-                                Click "Generate BOM &amp; Requirements" to pass details to the production supervisor.
+                                Create the style specs and size breakdown so BOM requirements can be generated.
                             </div>
-                            <div id="simWidgetContainer" class="sim-widget">
-                                <!-- Dynamic widgets (e.g. mini graphs, inputs, vendor catalog cards) injected by JS -->
-                            </div>
+                            <div id="simWidgetContainer" class="sim-widget"></div>
                         </div>
                     </div>
 
-                    <!-- Bottom Controls inside the console -->
                     <div class="sim-controls">
-                        <button class="btn btn-ghost" id="simPrevBtn" style="padding: 10px 16px;"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-                        
-                        <button class="btn btn-primary" id="simActionBtn" style="padding: 10px 24px; font-weight: 600;">
-                            Generate BOM Plan <i class="fa-solid fa-bolt" style="margin-left: 6px;"></i>
-                        </button>
-                        
-                        <button class="btn btn-ghost" id="simResetBtn" style="padding: 10px 16px;"><i class="fa-solid fa-rotate-left"></i> Restart</button>
+                        <button class="btn btn-ghost" id="simPrevBtn"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                        <button class="btn btn-primary" id="simActionBtn">Configure BOM Requirements <i class="fa-solid fa-scissors"></i></button>
+                        <button class="btn btn-ghost" id="simResetBtn"><i class="fa-solid fa-rotate-left"></i> Restart</button>
                     </div>
                 </div>
             </div>
@@ -2175,17 +2204,17 @@
                 <div class="book-spine" id="bookSpine">
                     <div class="book-page active" data-page="0">
                         <div class="book-page-badge">1 / 3 • Executive Dashboard</div>
-                        <img src="./screens/Screenshot 2026-07-18 at 2.45.00 PM.png" alt="Dashboard View">
+                        <img src="./screens/dashboard.jpg" alt="Dashboard View">
                         <div class="book-fade-overlay"></div>
                     </div>
                     <div class="book-page" data-page="1">
                         <div class="book-page-badge">2 / 3 • Production Planning &amp; BOM</div>
-                        <img src="./screens/Screenshot 2026-07-18 at 2.45.51 PM.png" alt="BOM Planning View">
+                        <img src="./screens/planning-bom.jpg" alt="BOM Planning View">
                         <div class="book-fade-overlay"></div>
                     </div>
                     <div class="book-page" data-page="2">
                         <div class="book-page-badge">3 / 3 • Warehouse Store Ledger</div>
-                        <img src="./screens/Screenshot 2026-07-18 at 2.45.43 PM.png" alt="Inventory Ledger View">
+                        <img src="./screens/inventory.jpg" alt="Inventory Ledger View">
                         <div class="book-fade-overlay"></div>
                     </div>
                 </div>
@@ -2426,14 +2455,14 @@
         });
 
         const screenData = [
-            { id: "dashboard", icon: "fa-gauge-high", url: "texflow.app/dashboard", title: "Dashboard", purpose: "A single home screen for leadership showing what needs a decision today.", team: "Nothing to search for — it's already surfaced.", mgmt: "Approvals and risks visible in seconds, not compiled reports.", img: "./screens/Screenshot 2026-07-18 at 2.45.00 PM.png" },
-            { id: "planning", icon: "fa-list-check", url: "texflow.app/bom", title: "Production Planning", purpose: "Where the material list for an order is built and checked against stock.", team: "One place to plan, instead of memory and notebooks.", mgmt: "Confidence that nothing was missed before approval.", img: "./screens/Screenshot 2026-07-18 at 2.45.51 PM.png" },
-            { id: "inventory", icon: "fa-warehouse", url: "texflow.app/stock", title: "Inventory", purpose: "A live picture of what's in the warehouse, and what's running low.", team: "No manual stock counts to plan around.", mgmt: "Capital isn't tied up in unnecessary stock.", img: "./screens/Screenshot 2026-07-18 at 2.45.43 PM.png" },
-            { id: "approvals", icon: "fa-stamp", url: "texflow.app/dashboard#approvals", title: "Approvals Queue", purpose: "Where the MD reviews and approves material plans, timelines, and purchases.", team: "One clear place to submit for sign-off.", mgmt: "Every decision in one queue, with full context attached.", img: "./screens/Screenshot 2026-07-18 at 2.45.00 PM.png" },
-            { id: "tracking", icon: "fa-diagram-project", url: "texflow.app/board", title: "Production Tracking", purpose: "Live status of every order, stage by stage, against its approved timeline.", team: "No more manual progress reporting.", mgmt: "Risk to a delivery date is visible before it's a crisis.", img: "./screens/Screenshot 2026-07-18 at 2.45.10 PM.png" },
-            { id: "sales", icon: "fa-handshake", url: "texflow.app/sales/my-work", title: "Sales Workspace", purpose: "Where the sales team manages buyers, leads, and their own order pipeline.", team: "Their own view of what needs following up today.", mgmt: "Clear visibility into what's being sold and to whom.", img: "./screens/Screenshot 2026-07-18 at 2.46.15 PM.png" },
-            { id: "purchase", icon: "fa-truck-fast", url: "texflow.app/purchase-orders", title: "Purchase Workspace", purpose: "Where the purchase team manages vendors and tracks orders against deadlines.", team: "Priorities sorted by what's actually urgent.", mgmt: "Vendor reliability visible at a glance.", img: "./screens/Screenshot 2026-07-18 at 2.45.19 PM.png" },
-            { id: "reports", icon: "fa-chart-line", url: "texflow.app/reports", title: "Reports & Analytics", purpose: "Trends across orders, vendors, and timelines, without compiling anything by hand.", team: "Evidence to support a purchasing or planning decision.", mgmt: "Season-over-season patterns, ready when needed.", img: "./screens/Screenshot 2026-07-18 at 2.45.59 PM.png" },
+            { id: "dashboard", icon: "fa-gauge-high", url: "texflow.app/dashboard", title: "Dashboard", purpose: "A single home screen for leadership showing what needs a decision today.", team: "Nothing to search for — it's already surfaced.", mgmt: "Approvals and risks visible in seconds, not compiled reports.", img: "./screens/dashboard.jpg" },
+            { id: "planning", icon: "fa-list-check", url: "texflow.app/bom", title: "Production Planning", purpose: "Where the material list for an order is built and checked against stock.", team: "One place to plan, instead of memory and notebooks.", mgmt: "Confidence that nothing was missed before approval.", img: "./screens/planning-bom.jpg" },
+            { id: "inventory", icon: "fa-warehouse", url: "texflow.app/stock", title: "Inventory", purpose: "A live picture of what's in the warehouse, and what's running low.", team: "No manual stock counts to plan around.", mgmt: "Capital isn't tied up in unnecessary stock.", img: "./screens/inventory.jpg" },
+            { id: "approvals", icon: "fa-stamp", url: "texflow.app/dashboard#approvals", title: "Approvals Queue", purpose: "Where the MD reviews and approves material plans, timelines, and purchases.", team: "One clear place to submit for sign-off.", mgmt: "Every decision in one queue, with full context attached.", img: "./screens/dashboard.jpg" },
+            { id: "tracking", icon: "fa-diagram-project", url: "texflow.app/board", title: "Production Tracking", purpose: "Live status of every order, stage by stage, against its approved timeline.", team: "No more manual progress reporting.", mgmt: "Risk to a delivery date is visible before it's a crisis.", img: "./screens/planning-bom.jpg" },
+            { id: "sales", icon: "fa-handshake", url: "texflow.app/sales/my-work", title: "Sales Workspace", purpose: "Where the sales team manages buyers, leads, and their own order pipeline.", team: "Their own view of what needs following up today.", mgmt: "Clear visibility into what's being sold and to whom.", img: "./screens/inventory.jpg" },
+            { id: "purchase", icon: "fa-truck-fast", url: "texflow.app/purchase-orders", title: "Purchase Workspace", purpose: "Where the purchase team manages vendors and tracks orders against deadlines.", team: "Priorities sorted by what's actually urgent.", mgmt: "Vendor reliability visible at a glance.", img: "./screens/dashboard.jpg" },
+            { id: "reports", icon: "fa-chart-line", url: "texflow.app/reports", title: "Reports & Analytics", purpose: "Trends across orders, vendors, and timelines, without compiling anything by hand.", team: "Evidence to support a purchasing or planning decision.", mgmt: "Season-over-season patterns, ready when needed.", img: "./screens/planning-bom.jpg" },
         ];
 
         // ---------- render screens grid cards ----------
@@ -2462,9 +2491,6 @@
         // ---------- OS simulator journey data ----------
         const simulatorData = [
             {
-                title: "1. CRM Sales",
-                role: "Sales Team",
-                icon: "fa-handshake",
                 badge: "CRM LEADS",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
@@ -2472,141 +2498,104 @@
                 status: "Awaiting BOM Setup",
                 statusIcon: "fa-circle-play",
                 happening: "Sales logs the buyer inquiry, target pricing (₹240/pc), style specs, and client shipment deadline.",
-                attention: "Initial check: Order timeline has no active BOM or approved pricing sheet.",
+                attention: "Order timeline has no active BOM or approved pricing sheet yet.",
                 attentionClass: "",
-                decision: "Create the initial style specifications and size breakdown (S/M/L/XL) to generate BOM requirements.",
+                decision: "Create the style specs and size breakdown so BOM requirements can be generated.",
                 actionText: "Configure BOM Requirements",
                 actionIcon: "fa-scissors",
-                widget: `<div style="font-size:12px; line-height:1.5;">
-                    <div style="font-weight:600; color:var(--indigo); margin-bottom:4px;">Inquiry: Polo Classic</div>
-                    Target Price: ₹240/pc <br>
-                    Target Ship Date: August 25, 2026
-                </div>`
+                widget: `<strong>Inquiry snapshot</strong><br>Target price: ₹240/pc<br>Target ship date: August 25, 2026`
             },
             {
-                title: "2. BOM Setup",
-                role: "Supervisor",
-                icon: "fa-scissors",
                 badge: "BOM DRAFT",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
                 cardQty: "10,000 pcs",
                 status: "BOM Created",
                 statusIcon: "fa-gears",
-                happening: "Supervisor defines size breakdown ratios. System automatically computes yarn weight, button counts, and packing trims required.",
-                attention: "BOM list compiled. Material availability check against current warehouse ledger required.",
+                happening: "Supervisor defines size breakdown ratios. The system computes yarn weight, button counts, and packing trims.",
+                attention: "BOM compiled. Material availability still needs checking against the warehouse ledger.",
                 attentionClass: "sim-alert-danger",
-                decision: "Run automatic warehouse ledger matching to identify sourcing gaps.",
+                decision: "Run an automatic stock match to identify sourcing gaps before committing the plan.",
                 actionText: "Run Stock Check",
                 actionIcon: "fa-boxes-stacked",
-                widget: `<div style="font-size:11.5px; line-height:1.45;">
-                    <strong>Auto-Calculated Materials:</strong><br>
-                    • Yarn: 2,200 kg (Size Ratio Matched)<br>
-                    • Buttons: 31,000 pcs (3/garment + wastage)<br>
-                    • Collar Trim: 10,500 pcs
-                </div>`
+                widget: `<strong>Auto-calculated materials</strong>
+                    <div class="sim-widget-rows" style="margin-top:8px;">
+                        <div class="sim-widget-row"><span>Yarn</span><strong>2,200 kg</strong></div>
+                        <div class="sim-widget-row"><span>Buttons</span><strong>31,000 pcs</strong></div>
+                        <div class="sim-widget-row"><span>Collar trim</span><strong>10,500 pcs</strong></div>
+                    </div>`
             },
             {
-                title: "3. Stock Check",
-                role: "Warehouse OS",
-                icon: "fa-boxes-stacked",
                 badge: "GAP ANALYSIS",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
                 cardQty: "10,000 pcs",
                 status: "Shortage Flagged",
                 statusIcon: "fa-circle-exclamation",
-                happening: "The system matches BOM requirements against available stock. Shortages are dynamically flagged for the procurement queue.",
-                attention: "Shortage detected: 600 kg Yarn & 12,000 buttons are missing from the store.",
+                happening: "BOM requirements are matched against available stock. Shortages are flagged for the procurement queue.",
+                attention: "Shortage detected: 600 kg yarn and 12,000 buttons are missing from the store.",
                 attentionClass: "sim-alert-danger",
-                decision: "Submit the BOM plan & purchase request to the MD for budget release.",
+                decision: "Submit the BOM plan and purchase request to the MD for budget release.",
                 actionText: "Request MD Approval",
                 actionIcon: "fa-stamp",
-                widget: `<div style="font-size:11px; display:flex; flex-direction:column; gap:4px;">
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.05); padding-bottom:3px;">
-                        <span>2/30s Cotton Yarn:</span><strong style="color:var(--danger);">Short 600 kg</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.05); padding-bottom:3px;">
-                        <span>Logo Buttons:</span><strong style="color:var(--danger);">Short 12,000 pcs</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between;">
-                        <span>Collar Trim:</span><strong style="color:#1e9a5a;">In Stock (11k avail)</strong>
-                    </div>
-                </div>`
+                widget: `<div class="sim-widget-rows">
+                        <div class="sim-widget-row"><span>2/30s Cotton Yarn</span><span class="bad">Short 600 kg</span></div>
+                        <div class="sim-widget-row"><span>Logo Buttons</span><span class="bad">Short 12,000 pcs</span></div>
+                        <div class="sim-widget-row"><span>Collar Trim</span><span class="ok">In stock (11k)</span></div>
+                    </div>`
             },
             {
-                title: "4. MD Approval",
-                role: "Owner (MD)",
-                icon: "fa-crown",
                 badge: "MD QUEUE",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
                 cardQty: "10,000 pcs",
                 status: "Approved",
                 statusIcon: "fa-file-circle-check",
-                happening: "MD reviews margin analysis, delivery timeline risk, and supplier quotation on a single dashboard.",
+                happening: "MD reviews margin analysis, delivery timeline risk, and supplier quotation on one dashboard.",
                 attention: "Awaiting MD sign-off to authorize raw material capital release.",
                 attentionClass: "",
-                decision: "Approve BOM timeline and authorize purchase orders for missing yarn and buttons.",
+                decision: "Approve the BOM timeline and authorize purchase orders for the shortfall materials.",
                 actionText: "Authorize & Release POs",
                 actionIcon: "fa-truck-ramp-box",
-                widget: `<div style="text-align:center; padding:8px 0; background:rgba(22, 50, 79, 0.03); border-radius:6px;">
-                    <div style="font-size:12px; font-weight:600; color:var(--indigo);">Budget Authorization</div>
-                    <div style="font-size:11px; margin-top:2px;">PO Value: ₹1,44,000 | Est Margin: 24%</div>
-                </div>`
+                widget: `<strong>Budget authorization</strong><br>PO value: ₹1,44,000 · Est. margin: 24%`
             },
             {
-                title: "5. Sourcing",
-                role: "Purchase & Store",
-                icon: "fa-truck-ramp-box",
                 badge: "RECEIVING",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
                 cardQty: "10,000 pcs",
                 status: "Stock Checked-In",
                 statusIcon: "fa-lock-open",
-                happening: "POs are dispatched to Tiruppur Yarn Mill. Stock arrives at the gate, passes QC check, and is logged in the ledger.",
-                attention: "All raw materials are fully loaded. System automatically unlocks order for fabric cutting.",
+                happening: "POs are dispatched. Stock arrives, passes QC, and is logged in the warehouse ledger.",
+                attention: "All raw materials loaded. The order can unlock for fabric cutting.",
                 attentionClass: "sim-alert-success",
-                decision: "Sourcing completed. Unlock cutting and stitching lines on the factory floor.",
+                decision: "Sourcing complete — unlock cutting and stitching lines on the floor.",
                 actionText: "Unlock Floor Production",
                 actionIcon: "fa-table-columns",
-                widget: `<div style="font-size:11.5px; line-height:1.4;">
-                    <strong>Gate Entry Match:</strong><br>
-                    • Yarn Receipt: 600 kg <span style="color:#1e9a5a; font-weight:600;">(Passed QC)</span><br>
-                    • Button Receipt: 12,000 pcs <span style="color:#1e9a5a; font-weight:600;">(Passed QC)</span>
-                </div>`
+                widget: `<div class="sim-widget-rows">
+                        <div class="sim-widget-row"><span>Yarn receipt</span><span class="ok">600 kg · Passed QC</span></div>
+                        <div class="sim-widget-row"><span>Button receipt</span><span class="ok">12,000 pcs · Passed QC</span></div>
+                    </div>`
             },
             {
-                title: "6. Floor Track & Export",
-                role: "Production & Logistics",
-                icon: "fa-table-columns",
                 badge: "IN PRODUCTION",
                 cardTitle: "Polo Classic T-Shirt",
                 cardBuyer: "Apex Wear Ltd",
                 cardQty: "10,000 pcs",
                 status: "Shipped & Invoiced",
                 statusIcon: "fa-circle-check",
-                happening: "Track batch progress dynamically through all floor stages (Cutting, Stitching, Washing, QC, Finishing) and complete container dispatch billing.",
-                attention: "All production stages complete. Cargo packed, customs cleared, and invoice generated.",
+                happening: "Batches move through cutting, stitching, wash, QC, and finishing — then container dispatch and billing.",
+                attention: "All stages complete. Cargo packed, customs cleared, and invoice generated.",
                 attentionClass: "sim-alert-success",
-                decision: "The order lifecycle is completed! Click restart to run another simulation.",
+                decision: "Order lifecycle complete. Restart to run the simulation again.",
                 actionText: "Restart Order Simulator",
                 actionIcon: "fa-rotate-left",
-                widget: `<div style="font-size:11px; display:flex; flex-direction:column; gap:3px;">
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.05); padding-bottom:1.5px;">
-                        <span>1. Cutting & Sewing:</span><strong style="color:#1e9a5a;">100% Done</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.05); padding-bottom:1.5px;">
-                        <span>2. Wash & QC Inspection:</span><strong style="color:#1e9a5a;">Passed (99.4%)</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(0,0,0,0.05); padding-bottom:1.5px;">
-                        <span>3. Finishing & Packing:</span><strong style="color:#1e9a5a;">100% Packed</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between;">
-                        <span>4. Export Cargo:</span><strong style="color:#1e9a5a;">Shipped (BL-99824)</strong>
-                    </div>
-                </div>`
+                widget: `<div class="sim-widget-rows">
+                        <div class="sim-widget-row"><span>Cutting & sewing</span><span class="ok">100% done</span></div>
+                        <div class="sim-widget-row"><span>Wash & QC</span><span class="ok">Passed 99.4%</span></div>
+                        <div class="sim-widget-row"><span>Finishing & packing</span><span class="ok">100% packed</span></div>
+                        <div class="sim-widget-row"><span>Export cargo</span><span class="ok">Shipped · BL-99824</span></div>
+                    </div>`
             }
         ];
 
@@ -2652,7 +2641,6 @@
         const simQAttention = document.getElementById('simQAttention');
         const simQDecision = document.getElementById('simQDecision');
         const simWidgetContainer = document.getElementById('simWidgetContainer');
-        
         const simPrevBtn = document.getElementById('simPrevBtn');
         const simActionBtn = document.getElementById('simActionBtn');
         const simResetBtn = document.getElementById('simResetBtn');
@@ -2660,52 +2648,47 @@
         function renderSimStage(stageIndex) {
             currentSimStage = stageIndex;
             const data = simulatorData[stageIndex];
-            
-            // Update stages active class
+
             document.querySelectorAll('.sim-stage').forEach((el, idx) => {
                 el.classList.toggle('active', idx === stageIndex);
                 el.classList.toggle('completed', idx < stageIndex);
             });
 
-            // Update pipeline progress line width
             const percent = (stageIndex / (simulatorData.length - 1)) * 100;
             simProgress.style.width = `${percent}%`;
 
-            // Update sidebar card
             simCardBadge.textContent = data.badge;
             simCardTitle.textContent = data.cardTitle;
             simCardBuyer.textContent = data.cardBuyer;
             simCardQty.textContent = data.cardQty;
-            simCardStatus.innerHTML = `<i class="fa-solid ${data.statusIcon}" style="color:${stageIndex >= 5 ? '#1e9a5a' : 'var(--indigo)'};"></i> <span>${data.status}</span>`;
 
-            // Update main questions content
+            const done = stageIndex >= simulatorData.length - 1;
+            simCardStatus.classList.toggle('done', done);
+            simCardStatus.innerHTML = `<i class="fa-solid ${data.statusIcon}"></i><span>${data.status}</span>`;
+
             simQHappening.textContent = data.happening;
-            
-            // Attention block with alert styling
+
             const attentionClass = data.attentionClass || '';
-            const attentionIcon = stageIndex >= 5 ? 'fa-circle-check' : 'fa-triangle-exclamation';
+            const attentionIcon = done ? 'fa-circle-check' : (attentionClass.includes('danger') ? 'fa-triangle-exclamation' : 'fa-info-circle');
             simQAttention.innerHTML = `<div class="sim-alert ${attentionClass}">
                 <i class="fa-solid ${attentionIcon}"></i>
                 <span>${data.attention}</span>
             </div>`;
-            
-            simQDecision.textContent = data.decision;
-            simWidgetContainer.innerHTML = data.widget;
 
-            // Update buttons state
+            simQDecision.textContent = data.decision;
+            simWidgetContainer.innerHTML = data.widget || '';
+            simWidgetContainer.style.display = data.widget ? '' : 'none';
+
             simPrevBtn.disabled = stageIndex === 0;
-            simActionBtn.innerHTML = `${data.actionText} <i class="fa-solid ${data.actionIcon}" style="margin-left: 6px;"></i>`;
+            simActionBtn.innerHTML = `${data.actionText} <i class="fa-solid ${data.actionIcon}"></i>`;
         }
 
-        // Add event listeners to pipeline stage nodes
         document.querySelectorAll('.sim-stage').forEach((el) => {
             el.addEventListener('click', () => {
-                const stage = parseInt(el.dataset.stage);
-                renderSimStage(stage);
+                renderSimStage(parseInt(el.dataset.stage, 10));
             });
         });
 
-        // Action button click advances or restarts
         simActionBtn.addEventListener('click', () => {
             if (currentSimStage < simulatorData.length - 1) {
                 renderSimStage(currentSimStage + 1);
@@ -2714,19 +2697,16 @@
             }
         });
 
-        // Previous button
         simPrevBtn.addEventListener('click', () => {
             if (currentSimStage > 0) {
                 renderSimStage(currentSimStage - 1);
             }
         });
 
-        // Reset button
         simResetBtn.addEventListener('click', () => {
             renderSimStage(0);
         });
 
-        // Initialize Simulator
         renderSimStage(0);
 
         // ---------- Screenshot Book Carousel Controls ----------
